@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+html {
+    font-family: 'Carrois Gothic', sans-serif;
+}
+
+body {
+    background-color: $bg-color;
+}
