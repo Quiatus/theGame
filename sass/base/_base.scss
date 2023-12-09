@@ -1,9 +1,19 @@
 @use '../abstracts' as *;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
 html {
     font-family: 'Carrois Gothic', sans-serif;
 }
 
 body {
     background-color: $bg-color;
+}
+
+img {
+    display: block;
 }
