@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+div {
+    background-color: $box-bg;
+    color: $font-primary;
+    width: 95vw;
+    border: $border-box;
+    box-shadow: $box-shadow;
+    margin: 1rem auto;
+    padding: 0.5rem;
+}

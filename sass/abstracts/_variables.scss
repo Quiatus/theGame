@@ -1,3 +1,14 @@
 // Colors
 
-$bg-color: #222;
+$bg-color: #111;
+$box-bg: #100;
+$font-primary: #FEE;
+$border-color: darkred;
+
+// borders
+
+$border-box: 1px solid $border-color;
+
+// shadows
+
+$box-shadow: 0 0 5px $border-color;

@@ -10,5 +10,15 @@ html {
 }
 
 body {
-  background-color: #222;
+  background-color: #111;
+}
+
+div {
+  background-color: #100;
+  color: #FEE;
+  width: 95vw;
+  border: 1px solid darkred;
+  box-shadow: 0 0 5px darkred;
+  margin: 1rem auto;
+  padding: 0.5rem;
 }
