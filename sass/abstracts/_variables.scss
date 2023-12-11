@@ -1,14 +1,22 @@
 // Colors
 
-$bg-color: #111;
-$box-bg: #100;
+$bg-color: rgba(#111, 0.75);
+$box-bg: rgba(#000, 0.6);
+$box-shadow-color: #711;
 $font-primary: #FEE;
-$border-color: darkred;
+$border-color: #711;
 
 // borders
 
-$border-box: 1px solid $border-color;
+$box-border: 1px solid $border-color;
 
 // shadows
 
-$box-shadow: 0 0 5px $border-color;
+$box-shadow: 0 0 5px $box-shadow-color;
+$text-shadow: 0 0 5px $border-color;
+
+// sizing
+
+$size-l: 1.5rem;
+$size-m: 1rem;
+$size-sm: 0.5rem;

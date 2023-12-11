@@ -8,10 +8,19 @@
 
 html {
     font-family: 'Carrois Gothic', sans-serif;
+    background-image: url('../../media/images/background/main.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body {
     background-color: $bg-color;
+    height: 100vh;
+}
+
+header {
+    padding: $size-l;
+    background: radial-gradient(ellipse at top, #281111, transparent);
 }
 
 img {

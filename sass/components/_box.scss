@@ -4,8 +4,14 @@ div {
     background-color: $box-bg;
     color: $font-primary;
     width: 95vw;
-    border: $border-box;
+    //border: $box-border;
     box-shadow: $box-shadow;
-    margin: 1rem auto;
-    padding: 0.5rem;
+    margin: 0 auto $size-m;
+    padding: $size-sm;
+    border-radius: $size-sm;
+}
+
+.test {
+    width: 90%;
+    height: 600px;
 }
