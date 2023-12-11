@@ -1,17 +1,33 @@
 @use '../abstracts' as *;
 
-div {
+@mixin generalDiv($width) {
     background-color: $box-bg;
     color: $font-primary;
-    width: 95vw;
-    //border: $box-border;
     box-shadow: $box-shadow;
-    margin: 0 auto $size-m;
     padding: $size-sm;
     border-radius: $size-sm;
+    width: $width;
 }
 
-.test {
-    width: 90%;
-    height: 600px;
+.resource-bar {
+    @include generalDiv(100%); 
+    grid-area: 1 / 1 / 2 / 3;
+    height: 50px;
+}
+
+.resource-bar-side {
+    @include generalDiv(100%); 
+    grid-area: 2 / 1 / 3 / 2;
+    height: 200px;
+}
+
+.navigation {
+    @include generalDiv(100%); 
+    grid-area: 3 / 1 / 4 / 2;
+    height: 300px;
+}
+
+.content {
+    @include generalDiv(100%); 
+    grid-area: 2 / 2 / 4 / 3; 
 }

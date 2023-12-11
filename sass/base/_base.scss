@@ -23,6 +23,15 @@ header {
     background: radial-gradient(ellipse at top, #281111, transparent);
 }
 
+.main {
+    width: 95vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: auto;
+    gap: $size-m $size-l;
+}
+
 img {
     display: block;
 }
