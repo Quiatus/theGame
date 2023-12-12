@@ -17,11 +17,27 @@
         <div class="main">
 
             <div class="info-box">
-                <p>Month</p>
-                <p>Army strength</p>
-                <p>Army status</p>
+                <div class="info-month">
+                    <span>Month: </span><span class="bold" id="currentMonth">0</span>
+
+                    <div class="progressMonth">
+                        <div class="progressBar">
+                            <div class="progressBarInisde"></div>
+                        </div> 
+                        <button class="buttonPrimary" id="nextMonth">Next Month</button>
+                    </div>
+                </div>
+
+                <div class="horizontal-separator"></div>
+                
+                <div>
+                    <span>Might: </span><span class="bold" id="armyMight">0</span>
+                    <p class="gain" id="armyStatus">Army is ready</p>
+                </div>
+
+                <div class="horizontal-separator"></div>
+
                 <p>Happiness</p>
-                <p>Research</p>
             </div>
 
             <div class="resource-bar">

@@ -4,6 +4,8 @@ h1, h3 {
   color: #FEE;
   text-shadow: 0 0 5px #711;
   line-height: 1;
+  cursor: default;
+  user-select: none;
 }
 
 h1 {
@@ -19,6 +21,10 @@ h1 {
 
 .gain {
   color: limegreen;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 * {
@@ -51,7 +57,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 6fr;
   grid-template-rows: auto;
-  gap: 1rem 1.5rem;
+  gap: 1.5rem;
 }
 
 img {
@@ -59,11 +65,11 @@ img {
 }
 
 .resource-bar {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
   color: #FEE;
   box-shadow: 0 0 5px #711;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
   width: 100%;
   grid-area: 2/1/3/2;
   display: flex;
@@ -71,31 +77,31 @@ img {
 }
 
 .info-box {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
   color: #FEE;
   box-shadow: 0 0 5px #711;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
   width: 100%;
   grid-area: 1/1/2/2;
 }
 
 .navigation {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
   color: #FEE;
   box-shadow: 0 0 5px #711;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
   width: 100%;
   grid-area: 3/1/4/2;
 }
 
 .content {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
   color: #FEE;
   box-shadow: 0 0 5px #711;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
   width: 100%;
   grid-area: 1/2/4/3;
 }
@@ -111,7 +117,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 3fr 2fr;
-  gap: 0 0.5rem;
+  gap: 0 0.8rem;
   align-items: center;
 }
 
@@ -125,9 +131,57 @@ img {
   grid-area: 1/2/2/3;
   font-size: 1.2rem;
   font-weight: 700;
+  cursor: default;
+  user-select: none;
 }
 
 .res-change {
   grid-area: 2/2/3/3;
   font-size: 0.8rem;
+  cursor: default;
+  user-select: none;
+}
+
+.buttonPrimary {
+  font-family: inherit;
+  color: #FEE;
+  font-size: 1rem;
+  border: 1px solid #711;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  background-color: #400;
+  cursor: pointer;
+}
+.buttonPrimary:hover {
+  background-color: #400;
+}
+.buttonPrimary:active {
+  transform: scale(0.95);
+}
+
+.info-box {
+  font-size: 1.2rem;
+  cursor: default;
+  user-select: none;
+}
+
+.progressMonth {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.progressBar {
+  border: 1px solid #711;
+  height: 12px;
+  width: 50%;
+}
+
+.progressBarInisde {
+  background: linear-gradient(90deg, #200, #711);
+  margin: 2px;
+  height: 6px;
+  width: 97%;
 }

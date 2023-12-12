@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.progressBar {
+    border: $box-border;
+    height: 12px;
+    width: 50%;
+}
+
+.progressBarInisde {
+    background: $progressbar;
+    margin: 2px;
+    height: 6px;
+    width: 97%;
+}

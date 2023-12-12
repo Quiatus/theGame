@@ -4,8 +4,8 @@
     background-color: $box-bg;
     color: $font-primary;
     box-shadow: $box-shadow;
-    padding: $size-sm $size-m;
-    border-radius: $size-sm;
+    padding: $size-s $size-m;
+    border-radius: $size-s;
     width: $width;
 }
 
@@ -35,5 +35,5 @@
     width: 100%;
     height: 1px;
     background-image: $bg-separator;
-    margin: 0.3rem 0;
+    margin: $size-xxs 0;
 }

@@ -6,6 +6,8 @@ h1, h2, h3 {
     color: $font-primary;
     text-shadow: $text-shadow;
     line-height: 1;
+    cursor: default;
+    user-select: none;
 }
 
 h1 {
@@ -16,7 +18,7 @@ h1 {
 }
 
 .header__h3 {
-    letter-spacing: $size-sm;
+    letter-spacing: $size-xs;
 }
 
 .gain {
@@ -25,4 +27,8 @@ h1 {
 
 .loss {
     color: $loss;
+}
+
+.bold {
+    font-weight: bold;
 }

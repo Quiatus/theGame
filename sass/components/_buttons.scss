@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+
+@mixin btn() {
+    font-family: inherit;
+    color: $font-primary;
+    font-size: $size-m;
+    border: $box-border;
+    border-radius: $size-xxs;
+    padding: $size-xxs;
+    background-color: #400;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #400;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+// buttons
+
+.buttonPrimary {
+    @include btn;
+}

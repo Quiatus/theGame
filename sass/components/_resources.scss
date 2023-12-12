@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 3fr 2fr;
-    gap: 0 $size-sm;
+    gap: 0 $size-s;
     align-items: center;
 }
 
@@ -16,11 +16,15 @@
 
 .res-amount {
     grid-area: 1 / 2 / 2 / 3;
-    font-size: 1.2rem;
+    font-size: $size-ml;
     font-weight: 700;
+    cursor: default;
+    user-select: none;
 }
 
 .res-change {
     grid-area: 2 / 2 / 3 / 3;
-    font-size: 0.8rem;
+    font-size: $size-s;
+    cursor: default;
+    user-select: none;
 }
