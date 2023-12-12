@@ -8,11 +8,13 @@
     border: $box-border;
     border-radius: $size-xxs;
     padding: $size-xxs;
-    background-color: #400;
+    background-color: $bg-color-button;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
 
     &:hover {
-        background-color: #400;
+        transition: filter 0.2s ease-in-out;
+        filter: brightness(1.25);
     }
 
     &:active {
@@ -24,4 +26,19 @@
 
 .buttonPrimary {
     @include btn;
+}
+
+.disabled {
+    @include btn;
+    color: $disabled;
+    border-color: $disabled;
+
+    &:hover {
+        filter: none;
+        transition: none;
+    }
+
+    &:active {
+        transform: none;
+    }
 }

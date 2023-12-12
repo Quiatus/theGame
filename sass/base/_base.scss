@@ -12,11 +12,13 @@ html {
     background-image: url('../media/images/background/main.png');
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 body {
     background-color: $bg-color;
     height: 100vh;
+    min-width: 1280px;
 }
 
 header {
@@ -25,8 +27,8 @@ header {
 }
 
 .main {
-    width: 95vw;
-    margin: 0 auto;
+    //width: 95vw;
+    margin: 0 $size-xl;
     display: grid;
     grid-template-columns: 1fr 6fr;
     grid-template-rows: auto;

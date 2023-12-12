@@ -37,3 +37,10 @@
     background-image: $bg-separator;
     margin: $size-xxs 0;
 }
+
+.vertical-separator {
+    width: 1px;
+    height: 100%;
+    background-image: $bg-separator;
+    margin: 0 $size-xxs;
+}
