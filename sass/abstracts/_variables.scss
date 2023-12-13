@@ -11,6 +11,7 @@ $loss: red;
 $disabled: gray;
 
 $bg-separator: linear-gradient(90deg, transparent, $border-color, transparent);
+$bg-separator-vertical: linear-gradient(transparent, $border-color 25% 75%, transparent);
 $progressbar: linear-gradient(90deg, $bg-color-secondary, $border-color);
 
 // borders

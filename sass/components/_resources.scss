@@ -10,8 +10,12 @@
 
 .res-img {
     grid-area: 1 / 1 / 3 / 2;
-    width: $size-xl;
-    height: $size-xl;
+
+    img {
+        width: $size-xl;
+        height: $size-xl;
+    }
+
 }
 
 .res-amount {

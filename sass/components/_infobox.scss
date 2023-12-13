@@ -10,6 +10,25 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: space-between;
+    //gap: $size-s;
+    margin-bottom: $size-xs;
+}
+
+.statusIcons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
     gap: $size-s;
-    margin-top: $size-xs;
+}
+
+.stat-img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.mightBox {
+    display: flex;
+    gap: $size-s;
+    align-items: center;
 }

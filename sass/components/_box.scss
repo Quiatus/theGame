@@ -31,11 +31,12 @@
 
 .vertical-separator {
     width: 1px;
-    height: 100%;
-    background-image: $bg-separator;
-    margin: 0 $size-xxs;
+    height: 2.5rem;
+    background-image: $bg-separator-vertical;
+    margin: auto 0;
 }
 
 .tooltip {
     position: relative;
+    display: inline-block;
 }

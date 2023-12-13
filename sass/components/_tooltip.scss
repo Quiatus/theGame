@@ -1,8 +1,9 @@
 @use '../abstracts' as *;
 
-.tooltiptext {
+.tooltip .tooltiptext {
+    visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
     background-color: $box-bg;
     color: $font-primary;
     font-size: $size-m;
@@ -12,11 +13,12 @@
     padding: $size-xs $size-s;
     position: absolute;
     z-index: 1;
-    top: 100%;
-    left: 0;
+    top: 80%;
+    left: 50%;
     user-select: none;
   }
 
   .tooltip:hover .tooltiptext {
+    visibility: visible;
     opacity: 1;
   }
