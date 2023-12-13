@@ -1,31 +1,14 @@
 @use '../abstracts' as *;
 
-
-@mixin btn() {
-    font-family: inherit;
-    color: $font-primary;
-    font-size: $size-m;
-    border: $box-border;
-    border-radius: $size-xxs;
-    padding: $size-xxs;
-    background-color: $bg-color-button;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-
-    &:hover {
-        transition: filter 0.2s ease-in-out;
-        filter: brightness(1.25);
-    }
-
-    &:active {
-        transform: scale(0.95);
-    }
-}
-
-// buttons
-
 .buttonPrimary {
     @include btn;
+}
+
+.buttonRadial {
+    @include btn;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
 }
 
 .disabled {
@@ -41,4 +24,11 @@
     &:active {
         transform: none;
     }
+}
+
+.disabledRadial {
+    @extend .disabled;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
 }

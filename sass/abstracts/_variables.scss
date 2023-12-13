@@ -1,17 +1,17 @@
 // Colors
 
-$bg-color: rgba(#111, 0.75);
-$box-bg: rgba(#080000, 0.75);
+$bg-color: rgba(#111, 0.8);
+$box-bg: rgba(#080000, 0.9);
 $font-primary: #FEE;
 $border-color: #711;
-$bg-color-seconday: #200;
+$bg-color-secondary: #200;
 $bg-color-button: #400;
 $gain: limegreen;
 $loss: red;
 $disabled: gray;
 
 $bg-separator: linear-gradient(90deg, transparent, $border-color, transparent);
-$progressbar: linear-gradient(90deg, $bg-color-seconday, $border-color);
+$progressbar: linear-gradient(90deg, $bg-color-secondary, $border-color);
 
 // borders
 

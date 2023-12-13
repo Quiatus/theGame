@@ -27,6 +27,10 @@ h1 {
   font-weight: bold;
 }
 
+span {
+  white-space: nowrap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -42,7 +46,7 @@ html {
 }
 
 body {
-  background-color: rgba(17, 17, 17, 0.75);
+  background-color: rgba(17, 17, 17, 0.8);
   height: 100vh;
   min-width: 1280px;
 }
@@ -65,7 +69,7 @@ img {
 }
 
 .resource-bar {
-  background-color: rgba(8, 0, 0, 0.75);
+  background-color: rgba(8, 0, 0, 0.9);
   color: #FEE;
   box-shadow: 0 0 5px #711;
   padding: 0.8rem 1rem;
@@ -77,7 +81,7 @@ img {
 }
 
 .info-box {
-  background-color: rgba(8, 0, 0, 0.75);
+  background-color: rgba(8, 0, 0, 0.9);
   color: #FEE;
   box-shadow: 0 0 5px #711;
   padding: 0.8rem 1rem;
@@ -87,7 +91,7 @@ img {
 }
 
 .navigation {
-  background-color: rgba(8, 0, 0, 0.75);
+  background-color: rgba(8, 0, 0, 0.9);
   color: #FEE;
   box-shadow: 0 0 5px #711;
   padding: 0.8rem 1rem;
@@ -97,7 +101,7 @@ img {
 }
 
 .content {
-  background-color: rgba(8, 0, 0, 0.75);
+  background-color: rgba(8, 0, 0, 0.9);
   color: #FEE;
   box-shadow: 0 0 5px #711;
   padding: 0.8rem 1rem;
@@ -111,6 +115,10 @@ img {
   height: 1px;
   background-image: linear-gradient(90deg, transparent, #711, transparent);
   margin: 0.3rem 0;
+}
+
+.tooltip {
+  position: relative;
 }
 
 .res-box {
@@ -142,7 +150,7 @@ img {
   user-select: none;
 }
 
-.buttonPrimary {
+.buttonRadial {
   font-family: inherit;
   color: #FEE;
   font-size: 1rem;
@@ -152,13 +160,16 @@ img {
   background-color: #400;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
 }
-.buttonPrimary:hover {
+.buttonRadial:hover {
   transition: filter 0.2s ease-in-out;
-  filter: brightness(1.25);
+  filter: brightness(1.5);
 }
-.buttonPrimary:active {
-  transform: scale(0.95);
+.buttonRadial:active {
+  transform: scale(0.9);
 }
 
 .info-box {
@@ -175,15 +186,33 @@ img {
   margin-top: 0.5rem;
 }
 
-.progressBar {
-  border: 1px solid #711;
-  height: 12px;
-  width: 50%;
+.progressBarRadial {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(closest-side, rgba(8, 0, 0, 0.9) 79%, transparent 80% 100%), conic-gradient(#711 50%, #200 0);
 }
 
-.progressBarInisde {
-  background: linear-gradient(90deg, #200, #711);
-  margin: 2px;
-  height: 6px;
-  width: 97%;
+.tooltiptext {
+  opacity: 0;
+  transition: opacity 0.5s;
+  background-color: rgba(8, 0, 0, 0.9);
+  color: #FEE;
+  font-size: 1rem;
+  border: 1px solid #711;
+  box-shadow: 0 0 5px #711;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  user-select: none;
+}
+
+.tooltip:hover .tooltiptext {
+  opacity: 1;
 }

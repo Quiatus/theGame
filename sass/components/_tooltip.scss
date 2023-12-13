@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.tooltiptext {
+    opacity: 0;
+    transition: opacity 0.5s;
+    background-color: $box-bg;
+    color: $font-primary;
+    font-size: $size-m;
+    border: $box-border;
+    box-shadow: $box-shadow;
+    border-radius: $size-xs;
+    padding: $size-xs $size-s;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    user-select: none;
+  }
+
+  .tooltip:hover .tooltiptext {
+    opacity: 1;
+  }
