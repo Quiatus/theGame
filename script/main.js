@@ -1,6 +1,7 @@
-const btnNextMonth = document.querySelector('#nextMonth');
-const prgNextMonth = document.querySelector('#nextMonthProgress');
-//let prgM = 0;
+import { converThousand } from './modules/utilities.js';
+import * as qSelectors from './modules/querySelectors.js';
+
+let currentMonth = 0;
 
 document.addEventListener('readystatechange', (event) => {
     if (event.target.readyState === "complete") {
@@ -9,26 +10,24 @@ document.addEventListener('readystatechange', (event) => {
 });
 
 const initApp = () => {
-    btnNextMonth.addEventListener('click', nextMonth);
+    qSelectors.btnNextMonth.addEventListener('click', nextMonth);
 }
 
-const moveMonthBar = (prgM) => {
-    if (prgM <= 100) {
-        console.log(prgM);
-        prgNextMonth.style.background = `radial-gradient(closest-side, #080000 79%, transparent 80% 100%), conic-gradient(#771111 ${prgM}%, #200000 0)`;
-        prgM += 2;
-        setTimeout(function(){
-            moveMonthBar(prgM)
-        }, 10);
+const moveMonthBar = (progress) => {
+    if (progress <= 100) {
+        qSelectors.prgNextMonth.style.background = `radial-gradient(closest-side, #080000 79%, transparent 80% 100%), conic-gradient(#771111 ${progress}%, #200000 0)`;
+        progress += 2;
+        setTimeout(() => moveMonthBar(progress), 10);
     } else {
-        btnNextMonth.classList.toggle('disabledRadial');
-        btnNextMonth.addEventListener('click', nextMonth);
+        qSelectors.btnNextMonth.classList.toggle('disabledRadial');
+        qSelectors.btnNextMonth.addEventListener('click', nextMonth);
     }
 }
 
 const nextMonth = () => {
-    btnNextMonth.classList.toggle('disabledRadial');
-    //prgM = 0;
+    qSelectors.btnNextMonth.classList.toggle('disabledRadial');
+    currentMonth += 1;
+    qSelectors.txtCurrentMonth.textContent = converThousand(currentMonth);
     moveMonthBar(0);
-    btnNextMonth.removeEventListener('click', nextMonth);
+    qSelectors.btnNextMonth.removeEventListener('click', nextMonth);
 }

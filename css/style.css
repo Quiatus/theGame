@@ -269,7 +269,7 @@ img {
 }
 
 .info-box {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: default;
   user-select: none;
 }
@@ -280,7 +280,6 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 0.8rem;
-  margin-bottom: 0.5rem;
 }
 
 .statusIcons {

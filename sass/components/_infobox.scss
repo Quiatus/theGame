@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .info-box {
-    font-size: $size-l;
+    font-size: $size-ml;
     cursor: default;
     user-select: none;
 }
@@ -12,7 +12,6 @@
     align-items: center;
     justify-content: space-between;
     gap: $size-s;
-    margin-bottom: $size-xs;
 }
 
 .statusIcons {
