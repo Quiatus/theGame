@@ -15,11 +15,16 @@
 .navigation {
     @include generalDiv(100%); 
     grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .content {
     @include generalDiv(100%); 
     grid-area: 1 / 2 / 4 / 3; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .horizontal-separator {

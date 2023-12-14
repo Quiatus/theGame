@@ -17,15 +17,15 @@
     border-radius: $size-xxs;
     padding: $size-xxs;
     background-color: $bg-color-button;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
     cursor: pointer;
 
     &:hover {
-        transition: filter 0.2s ease-in-out;
+        transition: filter 0.1s ease-in-out;
         filter: brightness(1.5);
     }
 
     &:active {
-        transform:scale(0.9);
+        transform:scale(0.95);
     }
 }

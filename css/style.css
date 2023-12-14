@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Nanum+Gothic&display=swap");
-h1, h3 {
+h1, h2, h3 {
   text-align: center;
   color: #EDDDDD;
   text-shadow: 0 0 5px #711;
@@ -21,6 +21,10 @@ h1 {
 
 .gain {
   color: limegreen;
+}
+
+.loss {
+  color: red;
 }
 
 .bold {
@@ -98,6 +102,8 @@ img {
   border-radius: 0.8rem;
   width: 100%;
   grid-area: 3/1/4/2;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .content {
@@ -108,6 +114,9 @@ img {
   border-radius: 0.8rem;
   width: 100%;
   grid-area: 1/2/4/3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .horizontal-separator {
@@ -160,6 +169,49 @@ img {
   user-select: none;
 }
 
+.buttonPrimary {
+  font-family: inherit;
+  color: #EDDDDD;
+  font-size: 1rem;
+  border: 1px solid #711;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  background-color: #400;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+.buttonPrimary:hover {
+  transition: filter 0.1s ease-in-out;
+  filter: brightness(1.5);
+}
+.buttonPrimary:active {
+  transform: scale(0.95);
+}
+
+.buttonNav {
+  font-family: inherit;
+  color: #EDDDDD;
+  font-size: 1rem;
+  border: 1px solid #711;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  background-color: #400;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+.buttonNav:hover {
+  transition: filter 0.1s ease-in-out;
+  filter: brightness(1.5);
+}
+.buttonNav:active {
+  transform: scale(0.95);
+}
+.buttonNav:last-of-type {
+  margin-bottom: 0;
+}
+
 .buttonRadial {
   font-family: inherit;
   color: #EDDDDD;
@@ -168,18 +220,52 @@ img {
   border-radius: 0.3rem;
   padding: 0.3rem;
   background-color: #400;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   cursor: pointer;
   width: 36px;
   height: 36px;
   border-radius: 50%;
 }
 .buttonRadial:hover {
-  transition: filter 0.2s ease-in-out;
+  transition: filter 0.1s ease-in-out;
   filter: brightness(1.5);
 }
 .buttonRadial:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
+}
+
+.disabled, .disabledRadial {
+  font-family: inherit;
+  color: #EDDDDD;
+  font-size: 1rem;
+  border: 1px solid #711;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  background-color: #400;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  color: gray;
+  border-color: gray;
+}
+.disabled:hover, .disabledRadial:hover {
+  transition: filter 0.1s ease-in-out;
+  filter: brightness(1.5);
+}
+.disabled:active, .disabledRadial:active {
+  transform: scale(0.95);
+}
+.disabled:hover, .disabledRadial:hover {
+  filter: none;
+  transition: none;
+}
+.disabled:active, .disabledRadial:active {
+  transform: none;
+}
+
+.disabledRadial {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
 }
 
 .info-box {
@@ -215,6 +301,19 @@ img {
   align-items: center;
 }
 
+.progressBar {
+  border: 1px solid #711;
+  height: 12px;
+  width: 50%;
+}
+
+.progressBarInisde {
+  background: linear-gradient(90deg, #200, #711);
+  margin: 2px;
+  height: 6px;
+  width: 97%;
+}
+
 .progressBarRadial {
   width: 50px;
   height: 50px;
@@ -222,7 +321,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(closest-side, rgba(8, 0, 0, 0.9) 79%, transparent 80% 100%), conic-gradient(#711 50%, #200 0);
+  background: radial-gradient(closest-side, rgba(8, 0, 0, 0.9) 79%, transparent 80% 100%), conic-gradient(#711 0%, #200 0);
 }
 
 .tooltip .tooltiptext {

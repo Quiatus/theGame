@@ -6,7 +6,7 @@
     <title>Ealemir - Elements Unbound</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="media/images/icons/favicon.png" type="image/x-icon">
-    <script type="module" src="script/main.js"></script>
+    <script defer type="module" src="script/main.js"></script>
 </head>
 <body>
     <header class="header">
@@ -25,7 +25,7 @@
                         </div>
                         <span class="bold" id="currentMonth">0</span>
                     </div>
-                    <div class="progressBarRadial tooltip">
+                    <div class="progressBarRadial tooltip" id="nextMonthProgress">
                         <button class="buttonRadial" id="nextMonth">▶</button>
                         <span class="tooltiptext">Next month</span>
                     </div>                         
@@ -122,9 +122,16 @@
             </div>
 
             <div class="navigation">
+                <button class="buttonNav">General</button>
+                <button class="buttonNav">Empire</button>
+                <button class="buttonNav">Army</button>
+                <button class="buttonNav">Conquest</button>
+                <button class="buttonNav">Encyclopedia</button>
             </div>
 
-            <div class="content">main window</div>
+            <div class="content">
+
+            </div>
         </div>
     </main>
 </body>

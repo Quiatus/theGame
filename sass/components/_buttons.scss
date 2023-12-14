@@ -4,6 +4,16 @@
     @include btn;
 }
 
+.buttonNav {
+    @include btn;
+    width: 100%;
+    margin-bottom: $size-s;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
 .buttonRadial {
     @include btn;
     width: 36px;
