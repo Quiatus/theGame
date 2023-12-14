@@ -1,24 +1,34 @@
 const btnNextMonth = document.querySelector('#nextMonth');
 const prgNextMonth = document.querySelector('#nextMonthProgress');
-let prgM = 0;
-const cls = []
+//let prgM = 0;
 
-function moveBar(){
+document.addEventListener('readystatechange', (event) => {
+    if (event.target.readyState === "complete") {
+        initApp();
+    }
+});
+
+const initApp = () => {
+    btnNextMonth.addEventListener('click', nextMonth);
+}
+
+const moveMonthBar = (prgM) => {
     if (prgM <= 100) {
+        console.log(prgM);
         prgNextMonth.style.background = `radial-gradient(closest-side, #080000 79%, transparent 80% 100%), conic-gradient(#771111 ${prgM}%, #200000 0)`;
-        prgM += 1;
-        setTimeout(moveBar, 150);
+        prgM += 2;
+        setTimeout(function(){
+            moveMonthBar(prgM)
+        }, 10);
     } else {
-        btnNextMonth.classList.remove('disabledRadial');
+        btnNextMonth.classList.toggle('disabledRadial');
         btnNextMonth.addEventListener('click', nextMonth);
     }
 }
 
-function nextMonth(){
-    btnNextMonth.classList.add('disabledRadial');
-    prgM = 0;
-    moveBar();
+const nextMonth = () => {
+    btnNextMonth.classList.toggle('disabledRadial');
+    //prgM = 0;
+    moveMonthBar(0);
     btnNextMonth.removeEventListener('click', nextMonth);
 }
-
-btnNextMonth.addEventListener('click', nextMonth);
