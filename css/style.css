@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Nanum+Gothic&display=swap");
 h1, h3 {
   text-align: center;
-  color: #FEE;
+  color: #EDDDDD;
   text-shadow: 0 0 5px #711;
   line-height: 1;
   cursor: default;
@@ -70,7 +70,7 @@ img {
 
 .resource-bar {
   background-color: rgba(8, 0, 0, 0.9);
-  color: #FEE;
+  color: #EDDDDD;
   box-shadow: 0 0 5px #711;
   padding: 0.8rem 1rem;
   border-radius: 0.8rem;
@@ -82,7 +82,7 @@ img {
 
 .info-box {
   background-color: rgba(8, 0, 0, 0.9);
-  color: #FEE;
+  color: #EDDDDD;
   box-shadow: 0 0 5px #711;
   padding: 0.8rem 1rem;
   border-radius: 0.8rem;
@@ -92,7 +92,7 @@ img {
 
 .navigation {
   background-color: rgba(8, 0, 0, 0.9);
-  color: #FEE;
+  color: #EDDDDD;
   box-shadow: 0 0 5px #711;
   padding: 0.8rem 1rem;
   border-radius: 0.8rem;
@@ -102,7 +102,7 @@ img {
 
 .content {
   background-color: rgba(8, 0, 0, 0.9);
-  color: #FEE;
+  color: #EDDDDD;
   box-shadow: 0 0 5px #711;
   padding: 0.8rem 1rem;
   border-radius: 0.8rem;
@@ -162,7 +162,7 @@ img {
 
 .buttonRadial {
   font-family: inherit;
-  color: #FEE;
+  color: #EDDDDD;
   font-size: 1rem;
   border: 1px solid #711;
   border-radius: 0.3rem;
@@ -183,7 +183,7 @@ img {
 }
 
 .info-box {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: default;
   user-select: none;
 }
@@ -193,6 +193,7 @@ img {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  gap: 0.8rem;
   margin-bottom: 0.5rem;
 }
 
@@ -229,7 +230,7 @@ img {
   opacity: 0;
   transition: opacity 0.3s;
   background-color: rgba(8, 0, 0, 0.9);
-  color: #FEE;
+  color: #EDDDDD;
   font-size: 1rem;
   border: 1px solid #711;
   box-shadow: 0 0 5px #711;

@@ -18,7 +18,13 @@
 
             <div class="info-box">
                 <div class="progressMonth">
-                    <span>Month: <span class="bold" id="currentMonth">0</span></span> 
+                    <div class="progressMonth">
+                        <div class="tooltip">
+                            <img src="./media/images/icons/res/month.png" class="stat-img" alt="might" width="256" height="256">
+                            <span class="tooltiptext">Current month</span>
+                        </div>
+                        <span class="bold" id="currentMonth">0</span>
+                    </div>
                     <div class="progressBarRadial tooltip">
                         <button class="buttonRadial" id="nextMonth">▶</button>
                         <span class="tooltiptext">Next month</span>
@@ -28,12 +34,11 @@
                 <div class="horizontal-separator"></div>
                 
                 <div class="mightBox">
-                    <div class="res-img tooltip">
-                        <img src="./media/images/icons/res/might.png" class="res-img" alt="might" width="256" height="256">
+                    <div class="tooltip">
+                        <img src="./media/images/icons/res/might.png" class="stat-img" alt="might" width="256" height="256">
                         <span class="tooltiptext">Army might</span>
                     </div>
                     <span class="bold" id="armyMight">0</span>
-                    
                 </div>
 
                 <div class="horizontal-separator"></div>
@@ -60,8 +65,8 @@
                         <img src="./media/images/icons/res/gold.png" alt="gold" width="256" height="256">
                         <span class="tooltiptext">Gold</span>
                     </div>
-                    <p class="res-amount" id="gold-amount">5000</p>
-                    <p class="res-change gain" id="gold-change">+500</p>
+                    <p class="res-amount" id="gold-amount">0</p>
+                    <p class="res-change gain" id="gold-change">-</p>
                 </div>
                 <div class="horizontal-separator"></div>
 
@@ -70,8 +75,8 @@
                         <img src="./media/images/icons/res/pop.png" alt="Population" width="256" height="256">
                         <span class="tooltiptext">Population</span>
                     </div>
-                    <p class="res-amount" id="people-amount">50</p>
-                    <p class="res-change gain" id="people-change">+500</p>
+                    <p class="res-amount" id="people-amount">0</p>
+                    <p class="res-change gain" id="people-change">-</p>
                 </div>
                 <div class="horizontal-separator"></div>
 
@@ -80,8 +85,8 @@
                         <img src="./media/images/icons/res/food.png" alt="Food" width="256" height="256">
                         <span class="tooltiptext">Food</span>
                     </div>
-                    <p class="res-amount" id="food-amount">5000</p>
-                    <p class="res-change gain" id="food-change">+500</p>
+                    <p class="res-amount" id="food-amount">0</p>
+                    <p class="res-change gain" id="food-change">-</p>
                 </div>
                 <div class="horizontal-separator"></div>
 
@@ -90,8 +95,8 @@
                         <img src="./media/images/icons/res/wood.png" alt="wood" width="256" height="256">
                         <span class="tooltiptext">Wood</span>
                     </div>
-                    <p class="res-amount" id="wood-amount">500</p>
-                    <p class="res-change gain" id="wood-change">+500</p>
+                    <p class="res-amount" id="wood-amount">0</p>
+                    <p class="res-change gain" id="wood-change">-</p>
                 </div>
                 <div class="horizontal-separator"></div>
 
@@ -100,8 +105,8 @@
                         <img src="./media/images/icons/res/stone.png" alt="stone" width="256" height="256">
                         <span class="tooltiptext">Stone</span>
                     </div>
-                    <p class="res-amount" id="stone-amount">500</p>
-                    <p class="res-change gain" id="stone-change">+500</p>
+                    <p class="res-amount" id="stone-amount">0</p>
+                    <p class="res-change gain" id="stone-change">-</p>
                 </div>
                 <div class="horizontal-separator"></div>
 
@@ -110,13 +115,15 @@
                         <img src="./media/images/icons/res/fame.png" alt="Fame" width="256" height="256">
                         <span class="tooltiptext">Fame</span>
                     </div>
-                    <p class="res-amount" id="fame-amount">500</p>
-                    <p class="res-change gain" id="fame-change">+500</p>
+                    <p class="res-amount" id="fame-amount">0</p>
+                    <p class="res-change gain" id="fame-change">-</p>
                 </div>
 
             </div>
 
-            <div class="navigation">buttons</div>
+            <div class="navigation">
+            </div>
+
             <div class="content">main window</div>
         </div>
     </main>

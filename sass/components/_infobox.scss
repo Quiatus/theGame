@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .info-box {
-    font-size: $size-ml;
+    font-size: $size-l;
     cursor: default;
     user-select: none;
 }
@@ -11,7 +11,7 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    //gap: $size-s;
+    gap: $size-s;
     margin-bottom: $size-xs;
 }
 
