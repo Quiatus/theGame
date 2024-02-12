@@ -1,34 +1,44 @@
-import { converThousand, saveGame } from "./modules/utilities.js";
+import { saveGame } from "./modules/utilities.js";
+import { refreshValues } from "./modules/domFunctions.js";
+import { Month } from "./modules/resources.js";
 
 const btnNextMonth = document.querySelector('#nextMonth');
 const prgNextMonth = document.querySelector('#nextMonthProgress');
-const txtCurrentMonth = document.querySelector('#currentMonth');
 const btnDel = document.querySelector('#btnDel');
 
-let currentMonth = 0;
+const month = new Month();
+const load = JSON.parse(localStorage.getItem('ealemis_save'));
+
+// ***** TEMP FN, DELETE LATER *****
 
 btnDel.addEventListener("click", () => {
     localStorage.removeItem('ealemis_save');
 })
 
+// *********************************
+
 document.addEventListener('readystatechange', (event) => {
     if (event.target.readyState === "complete") {
         initApp();
-        console.log('loaded')
     }
 });
 
 const initApp = () => {
+    load ? loadGame(load) : initNewGame();
+    refreshValues();
     btnNextMonth.addEventListener('click', nextMonth);
-    loadGame();
 }
 
-const loadGame = () => {
-    const load = JSON.parse(localStorage.getItem('ealemis_save'));
-    if (load) {
-        currentMonth = load.CurrentMonth;
-        txtCurrentMonth.textContent = converThousand(currentMonth);
+const initNewGame = () => {
+    let initialValues = {
+        "CurrentMonth" : 0
     }
+    month.setResource(initialValues.CurrentMonth);
+    localStorage.setItem('ealemis_save', JSON.stringify(initialValues))
+}
+
+const loadGame = (load) => {
+    month.setResource(load.CurrentMonth);
 }
 
 const moveMonthBar = (progress) => {
@@ -44,9 +54,9 @@ const moveMonthBar = (progress) => {
 
 const nextMonth = () => {
     btnNextMonth.classList.toggle('disabledRadial');
-    currentMonth += 1;
-    saveGame("CurrentMonth", currentMonth);
-    txtCurrentMonth.textContent = converThousand(currentMonth);
+    month.addResource(1);
+    saveGame("CurrentMonth", month.getResource());
+    refreshValues();
     moveMonthBar(0);
     btnNextMonth.removeEventListener('click', nextMonth);
 }
