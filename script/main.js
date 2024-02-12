@@ -1,19 +1,34 @@
+import { converThousand, saveGame } from "./modules/utilities.js";
+
 const btnNextMonth = document.querySelector('#nextMonth');
 const prgNextMonth = document.querySelector('#nextMonthProgress');
 const txtCurrentMonth = document.querySelector('#currentMonth');
+const btnDel = document.querySelector('#btnDel');
 
 let currentMonth = 0;
 
-const converThousand = (string) => string.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+btnDel.addEventListener("click", () => {
+    localStorage.removeItem('ealemis_save');
+})
 
 document.addEventListener('readystatechange', (event) => {
     if (event.target.readyState === "complete") {
         initApp();
+        console.log('loaded')
     }
 });
 
 const initApp = () => {
     btnNextMonth.addEventListener('click', nextMonth);
+    loadGame();
+}
+
+const loadGame = () => {
+    const load = JSON.parse(localStorage.getItem('ealemis_save'));
+    if (load) {
+        currentMonth = load.CurrentMonth;
+        txtCurrentMonth.textContent = converThousand(currentMonth);
+    }
 }
 
 const moveMonthBar = (progress) => {
@@ -30,6 +45,7 @@ const moveMonthBar = (progress) => {
 const nextMonth = () => {
     btnNextMonth.classList.toggle('disabledRadial');
     currentMonth += 1;
+    saveGame("CurrentMonth", currentMonth);
     txtCurrentMonth.textContent = converThousand(currentMonth);
     moveMonthBar(0);
     btnNextMonth.removeEventListener('click', nextMonth);
