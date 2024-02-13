@@ -1,13 +1,16 @@
 import { saveGame } from "./modules/utilities.js";
 import { refreshValues } from "./modules/domFunctions.js";
-import { Month } from "./modules/resources.js";
+import { Month, Gold, Pop } from "./modules/resources.js";
 
 const btnNextMonth = document.querySelector('#nextMonth');
 const prgNextMonth = document.querySelector('#nextMonthProgress');
 const btnDel = document.querySelector('#btnDel');
 
 const month = new Month();
-const load = JSON.parse(localStorage.getItem('ealemis_save'));
+const gold = new Gold();
+const pop = new Pop();
+
+let gameStats = JSON.parse(localStorage.getItem('ealemis_save'));
 
 // ***** TEMP FN, DELETE LATER *****
 
@@ -24,21 +27,25 @@ document.addEventListener('readystatechange', (event) => {
 });
 
 const initApp = () => {
-    load ? loadGame(load) : initNewGame();
-    refreshValues();
+    // if no save file exsists (i.e. a new game), loads initial values
+    if (!gameStats) {
+        gameStats = {
+            "CurrentMonth" : 0,
+            "Gold": 500,
+            "Pop": 100
+        }
+    }
+
+    SetResources(gameStats);
+    refreshValues(gameStats);
     btnNextMonth.addEventListener('click', nextMonth);
 }
 
-const initNewGame = () => {
-    let initialValues = {
-        "CurrentMonth" : 0
-    }
-    month.setResource(initialValues.CurrentMonth);
-    localStorage.setItem('ealemis_save', JSON.stringify(initialValues))
-}
-
-const loadGame = (load) => {
-    month.setResource(load.CurrentMonth);
+// sets loaded value to object
+const SetResources = (gameStats) => {
+    month.setResource(gameStats.CurrentMonth);
+    gold.setResource(gameStats.Gold);
+    pop.setResource(gameStats.Pop);
 }
 
 const moveMonthBar = (progress) => {
@@ -55,8 +62,18 @@ const moveMonthBar = (progress) => {
 const nextMonth = () => {
     btnNextMonth.classList.toggle('disabledRadial');
     month.addResource(1);
-    saveGame("CurrentMonth", month.getResource());
-    refreshValues();
+    pop.increasePop();
+    gold.increaseGold(pop.getResource());
+    // loads new values to an object, then passes it to teh helper functions
+    gameStats = {...gameStats,
+        "GainGold": gold.getIncrease(),
+        "GainPop": pop.getIncrease(),
+        "CurrentMonth": month.getResource(),
+        "Gold": gold.getResource(),
+        "Pop": pop.getResource()
+    }
+    saveGame(gameStats);
+    refreshValues(gameStats);
     moveMonthBar(0);
     btnNextMonth.removeEventListener('click', nextMonth);
 }
