@@ -1,5 +1,5 @@
 import { saveGame } from "./modules/utilities.js";
-import { refreshValues } from "./modules/domFunctions.js";
+import { refreshValues, displayNextMonthInfo } from "./modules/domFunctions.js";
 import { Month, Gold, Pop } from "./modules/resources.js";
 
 const btnNextMonth = document.querySelector('#nextMonth');
@@ -73,7 +73,7 @@ const nextMonth = () => {
         "Pop": pop.getResource()
     }
     saveGame(gameStats);
-    refreshValues(gameStats);
+    displayNextMonthInfo(gameStats);
     moveMonthBar(0);
     btnNextMonth.removeEventListener('click', nextMonth);
 }
