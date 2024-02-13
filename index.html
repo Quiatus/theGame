@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ealemis - Elements Unbound</title>
+    <title>Ealemis - Echoes of the Ancients</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="media/images/icons/favicon.png" type="image/x-icon">
     <script type="module" src="script/main.js"></script>
@@ -11,7 +11,7 @@
 <body>
     <header class="header">
         <h1 class="header__h1">Ealemis</h1>
-        <h3 class="header__h3">Elements Unbound</h3>
+        <h3 class="header__h3">Echoes of the Ancients</h3>
     </header>
     <main>
         <div class="main">
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="horizontal-separator"></div>
-                
+
                 <div class="mightBox">
                     <div class="tooltip">
                         <img src="./media/images/icons/res/might.png" class="stat-img" alt="might" width="256" height="256">
@@ -54,12 +54,11 @@
                     </div>
 
                     <div class="vertical-separator"></div>
-                    
+
                 </div>
             </div>
 
             <div class="resource-bar">
-                
                 <div class="res-box">
                     <div class="res-img tooltip">
                         <img src="./media/images/icons/res/gold.png" alt="gold" width="256" height="256">
@@ -86,7 +85,7 @@
                         <span class="tooltiptext">Food</span>
                     </div>
                     <p class="res-amount" id="food-amount">0</p>
-                    <p class="res-change gain" id="food-change">-</p>
+                    <p class="res-change loss" id="food-change">-</p>
                 </div>
                 <div class="horizontal-separator"></div>
 
@@ -118,22 +117,18 @@
                     <p class="res-amount" id="fame-amount">0</p>
                     <p class="res-change gain" id="fame-change">-</p>
                 </div>
-
             </div>
 
             <div class="navigation">
-                <button class="buttonNav">General</button>
-                <button class="buttonNav">Empire</button>
+                <button class="buttonNav">Home</button>
+                <button class="buttonNav">Clan</button>
                 <button class="buttonNav">Army</button>
-                <button class="buttonNav">Conquest</button>
+                <button class="buttonNav">Campaigns</button>
                 <button class="buttonNav" id="btnDel">Encyclopedia</button>
             </div>
 
             <div class="content">
-                <!-- <div class="newMonth">
-                    <h3 class="newMonth__h3 hidden">A new month has begun...</h3>
-                    <p class="hidden" id="newMonthGain">Our clan gained</p>
-                </div> -->
+                <!-- Dynamically generated -->
             </div>
         </div>
     </main>

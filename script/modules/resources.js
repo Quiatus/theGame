@@ -1,6 +1,7 @@
 class Resource {
     #resource = null;
     #increase = null;
+    #decrease = null;
 
     getResource() {
         return this.#resource;
@@ -19,6 +20,14 @@ class Resource {
 
     getIncrease() {
         return this.#increase;
+    }
+
+    setDecrease(decrease) {
+        return this.#decrease = decrease;
+    }
+
+    getDecrease() {
+        return this.#decrease;
     }
 }
 
@@ -44,5 +53,16 @@ export class Gold extends Resource {
         const max = Math.floor(currentPop * 0.125);  
         const addGold = Math.floor(Math.random() * (max - min) + min);
         return this.addResource(addGold)
+    }
+}
+
+export class Food extends Resource {
+    consumeFood(currentPop) {
+        const consumedFood = Math.floor(currentPop / 100);
+        const newFood = this.getResource() - consumedFood;
+        return (
+            this.setResource(newFood),
+            this.setDecrease(consumedFood)
+        )
     }
 }

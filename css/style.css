@@ -65,7 +65,7 @@ h1 {
 }
 
 .header__h3 {
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.3rem;
 }
 
 .newMonth__h3 {
@@ -90,7 +90,7 @@ h1 {
 }
 
 .popText {
-  color: purple;
+  color: mediumpurple;
 }
 
 span {

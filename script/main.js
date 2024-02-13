@@ -1,6 +1,6 @@
 import { saveGame } from "./modules/utilities.js";
 import { refreshValues, displayNextMonthInfo } from "./modules/domFunctions.js";
-import { Month, Gold, Pop } from "./modules/resources.js";
+import { Month, Gold, Pop, Food } from "./modules/resources.js";
 
 const btnNextMonth = document.querySelector('#nextMonth');
 const prgNextMonth = document.querySelector('#nextMonthProgress');
@@ -9,6 +9,7 @@ const btnDel = document.querySelector('#btnDel');
 const month = new Month();
 const gold = new Gold();
 const pop = new Pop();
+const food = new Food();
 
 let gameStats = JSON.parse(localStorage.getItem('ealemis_save'));
 
@@ -32,7 +33,8 @@ const initApp = () => {
         gameStats = {
             "CurrentMonth" : 0,
             "Gold": 500,
-            "Pop": 100
+            "Pop": 100,
+            "Food": 50
         }
     }
 
@@ -46,6 +48,7 @@ const SetResources = (gameStats) => {
     month.setResource(gameStats.CurrentMonth);
     gold.setResource(gameStats.Gold);
     pop.setResource(gameStats.Pop);
+    food.setResource(gameStats.Food);
 }
 
 const moveMonthBar = (progress) => {
@@ -63,14 +66,17 @@ const nextMonth = () => {
     btnNextMonth.classList.toggle('disabledRadial');
     month.addResource(1);
     pop.increasePop();
+    food.consumeFood(pop.getResource());
     gold.increaseGold(pop.getResource());
     // loads new values to an object, then passes it to teh helper functions
     gameStats = {...gameStats,
         "GainGold": gold.getIncrease(),
         "GainPop": pop.getIncrease(),
+        "GainFood": food.getDecrease(),
         "CurrentMonth": month.getResource(),
         "Gold": gold.getResource(),
-        "Pop": pop.getResource()
+        "Pop": pop.getResource(),
+        "Food": food.getResource()
     }
     saveGame(gameStats);
     displayNextMonthInfo(gameStats);
